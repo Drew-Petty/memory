@@ -1,0 +1,17 @@
+FROM node:12.13.0-alpine as build 
+WORKDIR /app
+COPY package*.json ./
+RUN npm install 
+COPY . .
+
+#NOTE running without build or nginx
+# EXPOSE 3002
+# CMD ["npm", "start"]
+
+
+# #NOTE run with build and nginx
+RUN npm run build
+FROM nginx 
+EXPOSE 3002
+COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY --from=build /app/build /usr/share/nginx/html

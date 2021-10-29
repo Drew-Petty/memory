@@ -1,0 +1,27 @@
+.paginatedItems{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 85vw;
+}
+.pagination{
+    border: black solid 5px;
+    border-radius: 10px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pageButton{
+    background-color: rgb(61, 61, 253);
+    color: white;
+    padding: 2px;
+    border: black 2px solid;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.currentPage{
+    background-color: white;
+    color: black;
+}

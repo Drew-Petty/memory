@@ -1,0 +1,40 @@
+version: "3.8"
+services:
+  mongodb:
+    image: 'mongo'
+    volumes:
+      - data:/data/db
+    container_name: mongodb
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    restart: on-failure
+    container_name: backend
+    volumes:
+      - public:/app/server/public
+    ports: 
+      - '3003:3003'
+    depends_on: 
+      - mongodb
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    restart: on-failure
+    # ports: 
+    #   - '3002:3000'
+  nginx:
+    container_name: nginx
+    depends_on:
+      - frontend
+    restart: always
+    build:
+      dockerfile: Dockerfile
+      context: ./nginx
+    ports:
+      - '80:80'
+volumes:
+  data:
+  public:

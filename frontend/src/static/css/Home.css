@@ -1,0 +1,14 @@
+.gameType{
+    width: 200px;
+}
+
+.singlePlayerImage{
+    border: black solid 5px;
+    height: 160px;
+    width: 160px;
+}
+.twoPlayerImage{
+    border: black solid 5px;
+    height: 160px;
+    width: 100%;
+}

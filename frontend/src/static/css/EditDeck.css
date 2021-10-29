@@ -1,0 +1,51 @@
+.imagePreview{
+    width: 100%;
+    border: black solid 5px;
+    border-radius: 10px;
+    margin: 10px 0px;
+}
+.editDeck{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 85vw;
+}
+.editCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    margin: 2%;
+    border: 5px solid black;
+    border-radius: 10px;
+}
+.editCardImage{
+    width: 100%;
+    /* aspect-ratio: 1/2; */
+    object-fit: cover;
+    object-position: 50% 50%;
+    border-radius: 5px 5px 0px 0px;
+}
+.editCardDeleteButton{
+    background-color: red; 
+    border: none;
+    border-top: black 5px solid;
+    color: white;
+    width: 100%;
+    padding: 15px 0px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 0px 0px 5px 5px;
+}
+@media only screen and (min-width:400px){
+    .editCard{
+        width: 25%;
+    }
+}
+@media only screen and (min-width:600px){
+    .editCard{
+        width: 12%;
+        margin: 1%;
+    }
+}
